@@ -1,0 +1,227 @@
+{% extends 'base.html'%} {% load static %} {% block content %}
+<div class="container-fluid content mt-4">
+  <div class="container col-12 well d-md-flex">
+    <div class="col-6">
+      <br /><br /><br />
+      <h5>INDIA’S #1 JOB PLATFORM</h5>
+      <h1 class="fw-bold">Your job search ends here</h1>
+      <h3>Discover 50 lakh+ career opportunities</h3>
+      <br /><br />
+      <form class="container col-12 d-flex custom-shadow-form">
+        <input
+          type="search"
+          placeholder="search here"
+          class="form-control custom-input me-md-2 col-md-19"
+        />
+        <button class="btn button-coustom col-md-2" type="submit">
+          Search 
+        </button>
+      </form>
+      <br /><br />
+      <div class="col-md-12 container-md d-flex-md">
+        <h3 class="col-md-12">Proud to Support</h3>
+        <img
+          src="{% static 'images/image-2.png' %}"
+          alt="image"
+          height="75%"
+          width="75%"
+          class="col-md-3"
+        /><img
+          src="{% static 'images/image-3.png' %}"
+          alt="AICTE"
+          height="75%"
+          width="75%"
+          class="col-md-3"
+        /><img
+          src="{% static 'images/image-4.png' %}"
+          height="75%"
+          width="75%"
+          alt="statupindia"
+          class="col-md-3"
+        />
+      </div>
+    </div>
+    <div>
+      <img
+        src="{% static 'images/image-1.png' %}"
+        height="500px"
+        width="700px"
+        alt="image"
+        class="container-fluid float-end col-md-11 mt-4"
+      />
+    </div>
+  </div>
+  <div class="container-fluid mt-5 me-0 ms-0 col-md-12">
+    <div class="container d-flex justify-content-around">
+      <a href="/account/job/?job_type=part_time" class="text-decoration-none">
+        <div class="col-md-12 card border-0 mx-md-5 my-md-2 px-md-4 py-md-2 ">
+          <h1 class="fw-bold fs-md-1">Popular <br />Searches on <br />
+            Apna</h1>
+        </div></a
+      >
+      <a href="/account/job/?job_type=internship" class="text-decoration-none">
+        <div class="col-md-12 card border-0 mx-md-5 my-md-2 px-md-4 py-md-2 custom-div">
+          <p class="fs-6">TRENDING AT #1</p>
+          <p class="fs-2 fw-bold">Jobs for Freshers</p>
+          <button type="submit" class="btn btn-link text-decoration-none text-dark fs-5 text-start col-md-auto">
+            View &rarr;
+          </button>
+        </div></a
+      >
+      <a href="/account/job/" class="text-decoration-none">
+        <div
+          class="col-md-12 card border-0 mx-md-5 my-md-2 px-md-4 py-md-2 custom-div"
+        >
+          <p class="fs-6">TRENDING AT #2</p>
+          <p class="fs-2 fw-bold">Lastest for You</p>
+          <button type="submit" class="btn btn-link text-decoration-none text-dark fs-5 text-start col-md-auto">
+            View &rarr;
+          </button>
+        </div></a
+      >
+    </div>
+    <div class="container d-flex justify-content-around">
+      <a href="/account/job/?job_type=Part Time" class="text-decoration-none">
+        <div class="col-md-12 card border-0 mx-md-5 my-md-2 px-md-4 py-md-2  custom-div">
+          <p class="fs-6">TRENDING AT #3</p>
+          <p class="fs-2 fw-bold">Part time Jobs</p>
+          <button type="submit" class="btn btn-link text-decoration-none text-dark fs-5 text-start col-md-auto">
+            View &rarr;
+          </button>
+        </div></a
+      >
+      <a href="/account/job/?gender=Female" class="text-decoration-none">
+        <div class="col-md-12 card border-0 mx-md-5 my-md-2 px-md-4 py-md-2 custom-div">
+          <p class="fs-6">TRENDING AT #4</p>
+          <p class="fs-2 fw-bold">Jobs for Women</p>
+          <button type="submit" class="btn btn-link text-decoration-none text-dark fs-5 text-start col-md-auto">
+            View &rarr;
+          </button>
+        </div></a
+      >
+      <a href="/account/job/?job_type=Full Time" class="text-decoration-none">
+        <div
+          class="col-md-12 card border-0 mx-md-5 my-md-2 px-md-4 py-md-2 custom-div"
+        >
+          <p class="fs-6">TRENDING AT #5</p>
+          <p class="fs-2 fw-bold">Full time Jobs</p>
+          <button type="submit" class="btn btn-link text-decoration-none text-dark fs-5 text-start col-md-auto">
+            View &rarr;
+          </button>
+        </div></a
+      >
+    </div>
+  </div>
+  <br /><br />
+  <br />
+  <div class="container my-3">
+    <div class="row justify-content-center">
+      <div
+        class="col-md-12 custom-downlode-color p-4 rounded shadow h-25 d-flex"
+      >
+        <div class="text-left col-md-6 ms-md-3 me-md-5">
+          <h2 class="text-left mb-4">Download Apna app!</h2>
+          <p class="text-left">
+            Unlimited job applications | HRs contact you directly | Track your
+            Applications
+          </p>
+          <a
+            href="https://play.google.com/store/search?q=apna+app&c=apps&hl=en-IN&utm_source=apac_med"
+            target="_blank"
+            ><button class="btn button-coustom">App download</button></a
+          >
+        </div>
+        <div class="text-right col-md-6 ps-5 pe-0">
+          <img
+            src="{% static 'images/image-5.png' %}"
+            height="350px"
+            width="250px"
+            alt="phone"
+            class="text-right align-items-md-end ms-md-3"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid well"> 
+    <h1 class="col-12 text-center">Trending job roles on Apna</h1>
+    <div class="my-md-5 d-flex justify-content-around col-md-12">
+      <marquee
+        direction="right"
+        width="75%"
+        scrollamount="10"
+        onmouseover="this.stop();"
+        onmouseout="this.start();"
+      >
+      <div class="d-flex justify-content-around">
+        {% for job in jobs %}
+
+        <div class="col-4 mx-md-5">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <div class="container col-md-12 d-flex">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                  <h5 class="card-title fw-bold" style="color: rgb(5, 11, 40)">
+                    {{ job.title }}
+                  </h5>
+                  <h6 class="card-subtitle mb-2 text-muted">
+                    {{ job.company_name }}
+                  </h6>
+                </div>
+              </div>
+              <p class="card-text">
+                <strong>Location:</strong> {{ job.location }}<br />
+                <strong>Salary:</strong> ₹{{ job.start_salary }} -
+                ₹{{job.end_salary}} <br />
+                <strong>Type:</strong> {{ job.job_type }}
+              </p>
+            </div>
+            <div
+              class="card-footer bg-transparent border-0 text-end d-flex justify-content"
+            >
+              <a href="/account/jobdetails/?val1={{user.id}}&val2={{job.id}}" class="btn btn-sm button-coustom me-2"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </marquee>
+    </div>
+    </div>
+  </div>
+  <div class="container my-3">
+    <div class="row justify-content-center">
+      <div
+        class="col-md-12 custom-downlode-color p-4 rounded shadow h-25 d-flex"
+      >
+        <div class="text-right col-md-6 ps-5 pe-0">
+          <img
+            src="{% static 'images/image-6.avif' %}"
+            height="350px"
+            width="550px"
+            alt="phone"
+            class="align-items-md-start me-md-3"
+          />
+        </div>
+        <div class="text-left col-md-6 ms-md-3 me-md-5">
+          <h2 class="text-left mb-4">APNA FOR EMPLOYERS</h2>
+          <p class="text-reght fs-2 fw-bolder">Want to hire?</p>
+          <p class="text-left">
+            Find the best candidate from 5 crore+ active job seekers!
+          </p>
+          {% if user.is_authenticated %} {% if user.role != "Job Seeker" %}
+          <a href="/accounts/postjob"
+            ><button class="btn button-coustom">Post job ></button></a
+          >{% endif %} {% else %}
+          <a href="/account/register/"
+            ><button class="btn button-coustom">Post job ></button></a
+          >
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

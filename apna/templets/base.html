@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Apna Clone</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="icon" href="{% static 'images/apnalogo.png' %}" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/"
+          ><img
+            src="{% static 'images/apnalogo.png' %}"
+            height="50px"
+            width="50px"
+            alt="logo"
+        /></a>
+        <button
+          class="navbar-toggler bg-light"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="/">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-light fw-bold"
+                href="#"
+                id="jobsDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                Jobs
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/account/job/?job_type=Part Time"
+                    >Part Time Jobs</a
+                  >
+                </li>
+                <li class="diveder"></li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/account/job/?job_type=internship"
+                    >Freshers Jobs</a
+                  >
+                </li>
+                <li class="diveder"></li>
+                <li>
+                  <a class="dropdown-item" href="/account/job/?gender=Female"
+                    >Jobs for women</a
+                  >
+                </li>
+                <li class="diveder"></li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/account/job/?job_type=Full Time"
+                    >Full Time Jobs</a
+                  >
+                </li>
+                <li class="diveder"></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="/contests">Contests</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="/degrees">Degree</a>
+            </li>
+          </ul>
+          <div class="d-flex gap-2">
+            {% if user.is_authenticated %} {% if user.role == "Job Seeker" %}
+            <a href="/account/seekprofile/?val={{user.id}}">
+              <button class="btn fw-bold log-button text-light">Profile</button>
+            </a>
+            {% else %}
+            <a href="/account/empprofile">
+              <button class="btn fw-bold log-button text-light">Profile</button>
+            </a>
+            {% endif %}
+            <a href="/account/logout">
+              <button class="btn fw-bold log-button text-light">Logout</button>
+            </a>
+            {% else %}
+            <a href="/account/register/">
+              <button class="btn fw-bold log-button text-light">
+                Register
+              </button>
+            </a>
+            <a href="/account/login/">
+              <button class="btn fw-bold log-button text-light">Login</button>
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Page Content -->
+    <div class="content">{% block content %} {% endblock %}</div>
+    <!-- Footer -->
+    <footer class="footer-custom text-white">
+      <div class="container col-md-12">
+        <div class="row">
+          <div class="col-md-3 footer-section">
+            <h5>Apna</h5>
+            <p>
+              Build your career with us. Explore jobs, careers, and upskill
+              opportunities.
+            </p>
+          </div>
+          <div class="col-md-3 footer-section">
+            <h6>Company</h6>
+            <a href="/about">About</a><br />
+            <a href="/career">Careers</a><br />
+            <a href="/privacy">Privacy Policy</a>
+          </div>
+          <div class="col-md-3 footer-section">
+            <h6>For Job Seekers</h6>
+            <a href="/account/job/">Search Jobs</a><br />
+            <a href="/account/job/">Apply Now</a><br />
+            <a href="/account/job/">Internships</a>
+          </div>
+          <div class="col-md-3 footer-section">
+            <h6>Contact</h6>
+            <a href="/support">Support</a><br />
+            <a href="/support?val=1">Email Us</a><br />
+            <a href="/support?">Help Center</a>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          &copy; 2025 ApnaClone. All rights reserved.
+        </div>
+      </div>
+    </footer>
+    <script>
+      const divs = document.querySelectorAll(".custom-div");
+      const button = document.querySelectorAll(".button-coustom");
+      divs.forEach((division) => {
+        division.addEventListener("mouseenter", () => {
+          division.classList.add("border", "rounded", "custom-color");
+        });
+        division.addEventListener("mouseleave", () => {
+          division.classList.remove("border", "rounded", "custom-color");
+        });
+      });
+      button.forEach((b) => {
+        b.addEventListener("click", () => {
+          b.classList.add("button-coustom");
+        });
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container my-5">
+  <h2 class="text-center mb-4" style="color: #2c1e1e">Privacy Policy</h2>
+  <p class="text-dark fs-6 mb-4">
+    We respect your privacy and are committed to protecting your personal
+    information.
+  </p>
+  <div class="accordion" id="privacyAccordion">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button
+          class="accordion-button shadow-none bg-light"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseOne"
+        >
+          What information do we collect?
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          We collect basic personal info like your name, email, resume, and job
+          preferences to match you with jobs.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button
+          class="accordion-button shadow-none bg-light"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseTwo"
+        >
+          How do we use your information?
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          Your information is used solely to help you find better jobs and
+          provide personalized suggestions.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

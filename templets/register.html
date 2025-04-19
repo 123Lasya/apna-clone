@@ -1,0 +1,126 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container-fluid mt-md-0 mb-md-0 border border-black pt-md-0">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-10">
+      <div class="well border-0 rounded-4 pt-md-4 pe-md-3 ps-md-3 pb-md-3">
+        <div class="row g-0">
+          <!-- Image Side -->
+          <div
+            class="col-md-6 d-flex align-items-center justify-content-center float-md-start mb-md-0 mt-md-5 pt-md-3 pb-md-0"
+          >
+            <img
+              src="{% static 'images/image-7.png' %}"
+              alt="customer"
+              class="img-fluid rounded-start pt-md-0 img-rounded"
+              style="max-height: 550px; object-fit: cover"
+            />
+          </div>
+
+          <!-- Form Side -->
+          <div class="col-md-6 pt-md-0 ps-md-5 pe-md-3 pb-md-1">
+            <br />
+            <br />
+            <h2 class="fw-bold mb-4 text-center text-dark">Join Us Today!</h2>
+            <form action="/account/register/" method="post">
+              {% csrf_token %}
+              <div class="mb-2">
+                <label class="form-label fw-semibold">First Name</label>
+                <input
+                  type="text"
+                  name="firstname"
+                  class="form-control custom-input rounded-3"
+                  placeholder="Enter your first name"
+                  required
+                />
+              </div>
+              <div class="mb-2">
+                <label class="form-label fw-semibold">Last Name</label>
+                <input
+                  type="text"
+                  name="lastname"
+                  class="form-control custom-input rounded-3"
+                  placeholder="Enter your last name"
+                />
+              </div>
+              <div class="mb-2">
+                <label class="form-label fw-semibold">User Name</label>
+                <input
+                  type="text"
+                  name="username"
+                  class="form-control custom-input rounded-3"
+                  placeholder="Enter your user name"
+                  required
+                />
+              </div>
+              <div class="mb-2">
+                <label class="form-label fw-semibold">Role</label>
+                <select
+                  name="role"
+                  class="form-select custom-input rounded-3"
+                  required
+                >
+                  <option value="" disabled selected>Select your role</option>
+                  <option value="Job Seeker">Job Seeker</option>
+                  <option value="Job Provider">Job Provider</option>
+                </select>
+              </div>
+
+              <div class="mb-2">
+                <label class="form-label fw-semibold">Email</label>
+                <input
+                  type="email"
+                  name="emailid"
+                  class="form-control custom-input rounded-3"
+                  placeholder="Enter your email ID"
+                  required
+                />
+              </div>
+              <div class="mb-2">
+                <label class="form-label fw-semibold">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  class="form-control custom-input rounded-3"
+                  placeholder="Create a password"
+                  required
+                />
+              </div>
+              <div class="mb-2">
+                <label class="form-label fw-semibold">Phone Number</label>
+                <input
+                  type="tel"
+                  name="phonenumber"
+                  class="form-control custom-input rounded-3"
+                  placeholder="Enter your phone number"
+                  required
+                />
+              </div>
+              <div class="d-grid">
+                <button
+                  type="submit"
+                  class="btn btn-lg rounded-3 shadow-sm button-coustom col-md-2 p-1 custom-input mt-md-2"
+                >
+                  Submit
+                </button>
+                <a
+                  href="/account/login/"
+                  class="d-grid text-dark text-decoration-none mt-md-1"
+                >
+                  Already have an account?</a
+                >
+              </div>
+              {% if messages %}
+              <div class="mt-1">
+                {% for i in messages %}
+                <div class="text-left text-danger py-1 mb-1">{{ i }}</div>
+                {% endfor %}
+              </div>
+              {% endif %}
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

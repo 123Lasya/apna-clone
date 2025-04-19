@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container py-5">
+  <h2 class="text-center mb-4">Applicants for Your Job Posts</h2>
+
+  {% if applications %}
+  <div class="table-responsive">
+    <table
+      class="table table-light text-dark table-bordered table-hover rounded"
+    >
+      <thead class="table-dark text-light">
+        <tr>
+          <th>Job Title</th>
+          <th>Applicant</th>
+          <th>Email</th>
+          <th>Applied On</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for app in applications %}
+        <tr>
+          <td>{{ app.job.title }}</td>
+          <td>{{ app.applicant.username }}</td>
+          <td>{{ app.applicant.email }}</td>
+          <td>{{ app.applied_on|date:"M d, Y H:i" }}</td>
+          <td>
+            {% if app.status == "Pending" %}
+            <span class="badge bg-warning text-dark">{{ app.status }}</span>
+            {% elif app.status == "Accepted" %}
+            <span class="badge bg-success">{{ app.status }}</span>
+            {% elif app.status == "Rejected" %}
+            <span class="badge bg-danger">{{ app.status }}</span>
+            {% else %}
+            <span class="badge bg-secondary">{{ app.status }}</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <p class="text-center">No applications found for your posted jobs.</p>
+  {% endif %}
+</div>
+{% endblock %}

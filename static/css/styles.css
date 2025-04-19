@@ -1,0 +1,84 @@
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1; /* Pushes footer to the bottom */
+}
+
+.navbar-custom,
+.footer-custom {
+  background-color: rgb(5, 11, 40);
+  color: white;
+}
+
+.navbar-custom .nav-link,
+.navbar-custom .navbar-brand {
+  color: white;
+}
+
+.navbar-custom {
+  color: #ffdab9;
+}
+.dropdown-item:active,
+.dropdown-item:hover {
+  background-color: #ffdab9e2;
+  color: black;
+}
+.reg-button {
+  background-color: white;
+}
+.log-button {
+  background-color: rgb(5, 11, 40);
+}
+.lable-custom {
+  border: 1px white solid;
+}
+.button-coustom {
+  background-color: rgb(5, 11, 40);
+  color: white;
+}
+.button-coustom:hover {
+  background-color: rgb(5, 11, 40);
+  color: white;
+}
+.custom-input:focus {
+  box-shadow: 0 0 5px #ffdab9e2;
+  border-color: #ffdab9e2;
+  outline: none;
+}
+.custom-color {
+  background: linear-gradient(to top, #ffdab9e2, #ffdab980, #ffffff);
+}
+.custom-downlode-color {
+  background-color: #ffdab980;
+}
+.scroll {
+  display: flex;
+  gap: 10px;
+}
+.footer-custom {
+  padding: 40px 20px;
+}
+
+.footer-custom a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-custom a:hover {
+  text-decoration: underline;
+  color: #d5d9eb;
+}
+
+.footer-custom .footer-section {
+  margin-bottom: 20px;
+}

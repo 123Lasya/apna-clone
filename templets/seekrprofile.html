@@ -1,0 +1,72 @@
+{% extends 'base.html'%} {% load static %} {% block content %}
+<div class="container mt-5" style="color: #000">
+  <!-- Profile Header -->
+  <div class="row align-items-center mb-4">
+    <div class="col-md-2 text-center">
+      <img
+        src="{% static 'images/image-10.webp' %}"
+        alt="Profile Pic"
+        class="rounded-circle img-fluid border"
+        height="100px"
+        width="100px"
+      />
+      <br />
+    </div>
+    <div class="col-md-10">
+      <h3 class="mb-1">{{user.first_name}} {{user.last_name}}</h3>
+      <p class="mb-0"></p>
+      {% if val %}
+      <a href="/account/seekinfo/?val1=1&val2={{user.id}}"
+        ><button class="btn button-coustom py-1 text-light">Create</button></a
+      >
+      {% else %}
+      <a href="/account/seekinfo/?val2={{user.id}}"
+        ><button class="btn button-coustom py-1 text-light">Edit</button></a
+      >
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Profile Sections about_me
+skills
+work_experience
+education
+projects -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title text-dark">About Me</h5>
+      <p class="card-text">{{info.about_me}}</p>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title text-dark">Skills</h5>
+      <p class="mb-0">{{info.skills}}</p>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title text-dark">Work Experience</h5>
+      <p class="mb-0">{{info.work_experience}}</p>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title text-dark">Education</h5>
+      <p class="mb-0">{{info.education}}</p>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title text-dark">Projects</h5>
+      <ul class="mb-0 list-unstyled">
+        <li>{{info.projects}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container my-5">
+  <h2 class="text-center mb-4" style="color: rgb(5, 11, 40)">
+    Explore Exciting Contests
+  </h2>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    {% for i in contests %}
+    <div class="col">
+      <div class="card h-100 shadow border-0">
+        <div class="card-body">
+          <h5 class="card-title text-dark">{{i.title}}</h5>
+          <p class="card-text">{{i.description}}</p>
+          <span class="badge bg-dark mb-2">Ends:{{i.end_date}}</span><br />
+          <a href="{{i.link}}" target="_blank" class="btn button-coustom mt-1"
+            >Join Now</a
+          >
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
