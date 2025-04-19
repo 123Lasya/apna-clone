@@ -77,7 +77,7 @@ import dj_database_url
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',  # <- This is the correct ENGINE
+        'ENGINE': 'mysql.connector.django',  
         'NAME': 'apnadatabase',
         'USER': 'root',
         'PASSWORD': '1234Lasya..',
