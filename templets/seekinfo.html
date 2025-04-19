@@ -1,0 +1,101 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container py-5">
+  <h2 class="text-center mb-4">Update Your Profile</h2>
+  <form method="POST" novalidate action="/account/seekinfo/?val2={{user.id}}">
+    {% csrf_token %}
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <label for="about_me" class="form-label text-dark fw-5 fs-5"
+          >About Me</label
+        >
+        <textarea
+          name="about_me"
+          class="form-control outline-none shadow-sm border"
+          id="about_me"
+          rows="3"
+          placeholder="Write about yourself..."
+        >
+{{about_me}}</textarea
+        >
+      </div>
+    </div>
+    <!--about_me
+skills
+work_experience
+education
+projects -->
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <label for="skills" class="form-label text-dark fw-5 fs-5"
+          >Skills</label
+        >
+        <input
+          type="text"
+          name="skills"
+          class="form-control outline-none shadow-sm border"
+          id="skills"
+          placeholder="e.g. Python, Django, HTML"
+          value="{{skills}}"
+        />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <label for="work_experience" class="form-label text-dark fw-5 fs-5"
+          >Work Experience</label
+        >
+        <textarea
+          name="work_experience"
+          class="form-control outline-none shadow-sm border"
+          id="work_experience"
+          rows="3"
+          placeholder="Describe your work experience"
+        >
+{{work_experience}}</textarea
+        >
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <label for="education" class="form-label text-dark fw-5 fs-5"
+          >Education</label
+        >
+        <textarea
+          name="education"
+          class="form-control outline-none shadow-sm border"
+          id="education"
+          rows="3"
+          placeholder="Mention your education details"
+        >
+{{education}}</textarea
+        >
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <label for="projects" class="form-label text-dark fw-5 fs-5"
+          >Projects</label
+        >
+        <textarea
+          name="projects"
+          class="form-control outline-none shadow-sm border"
+          id="projects"
+          rows="3"
+          placeholder="Mention projects you've worked on"
+        >
+{{projects}}</textarea
+        >
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-light button-coustom px-3">
+        Save Profile
+      </button>
+    </div>
+  </form>
+</div>
+{% endblock %}

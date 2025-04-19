@@ -1,0 +1,139 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow border-0">
+        <div
+          class="card-header text-center text-white head-custom p-md-3 fw-bolder"
+        >
+          <h4 class="mb-0">Post a New Job</h4>
+        </div>
+        <div class="card-body px-5 py-4">
+          <form action="/account/postjob/?val={{user.id}}" method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="title" class="form-label fw-semibold"
+                >Job Title</label
+              >
+              <input
+                type="text"
+                class="form-control custom-input"
+                id="title"
+                name="title"
+                placeholder="e.g. Software Developer"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="company" class="form-label fw-semibold"
+                >Company Name</label
+              >
+              <input
+                type="text"
+                class="form-control custom-input"
+                id="company"
+                name="company_name"
+                placeholder="e.g. TCS, Infosys"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="location" class="form-label fw-semibold"
+                >Location</label
+              >
+              <input
+                type="text"
+                class="form-control custom-input"
+                id="location"
+                name="location"
+                placeholder="e.g. Hyderabad"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="startsalary" class="form-label fw-semibold"
+                >Starting Salary (Annual ₹)</label
+              >
+              <input
+                type="number"
+                class="form-control custom-input"
+                id="startsalary"
+                name="startsalary"
+                placeholder="e.g. 500000"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="endsalary" class="form-label fw-semibold"
+                >Highest Salary (Annual ₹)</label
+              >
+              <input
+                type="number"
+                class="form-control custom-input"
+                id="endsalary"
+                name="endsalary"
+                placeholder="e.g. 500000"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="job_type" class="form-label fw-semibold"
+                >Job Type</label
+              >
+              <select
+                class="form-select custom-input"
+                id="job_type"
+                name="job_type"
+                required
+              >
+                <option value="">-- Select --</option>
+                <option value="Full Time">Full Time</option>
+                <option value="Part Time">Part Time</option>
+                <option value="Internship">Internship</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="gender" class="form-label fw-semibold"
+                >Gender Requirment</label
+              >
+              <select
+                class="form-select custom-input"
+                id="gender"
+                name="gender"
+                required
+              >
+                <option value="">-- Select --</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Any">Both</option>
+              </select>
+            </div>
+            <div class="mb-4">
+              <label for="description" class="form-label fw-semibold"
+                >Job Description</label
+              >
+              <textarea
+                class="form-control custom-input"
+                id="description"
+                name="description"
+                rows="4"
+                placeholder="Describe the job responsibilities..."
+                required
+              ></textarea>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn fw-bold button-coustom col-md-2">
+                Post Job
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

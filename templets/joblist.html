@@ -1,0 +1,118 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="container my-5">
+  {% if user.role == "Job Seeker" %}
+  <h2 class="text-center mb-4" style="color: rgb(5, 11, 40)">
+    Latest Job Openings
+  </h2>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    {% for job in jobs %}
+    <div class="col">
+      <div class="card h-100 shadow">
+        <div class="card-body">
+          <div class="container col-md-12 d-flex">
+            <div class="col-md-1">
+              <img
+                src="{% static 'images/image-9.png' %}"
+                height="25px"
+                width="25px"
+                alt="img"
+              />
+            </div>
+            <div class="col-md-10">
+              <h5 class="card-title fw-bold" style="color: rgb(5, 11, 40)">
+                {{ job.title }}
+              </h5>
+              <h6 class="card-subtitle mb-2 text-muted">
+                {{ job.company_name }}
+              </h6>
+            </div>
+          </div>
+          <p class="card-text">{{ job.description|truncatechars:100 }}</p>
+          <p class="card-text">
+            <strong>Location:</strong> {{ job.location }}<br />
+            <strong>Salary:</strong> ₹{{ job.start_salary }} -
+            ₹{{job.end_salary}} <br />
+            <strong>Type:</strong> {{ job.job_type }}
+          </p>
+        </div>
+        <div
+          class="card-footer bg-transparent border-0 text-end d-flex justify-content"
+        >
+          <a
+            href="/account/jobdetails/?val1={{user.id}}&val2={{job.id}}"
+            class="btn btn-sm button-coustom me-2"
+            >View Details</a
+          >
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <div class="text-center text-muted">
+      <p>No job postings available right now. Check back later!</p>
+    </div>
+    {% endfor %}
+  </div>
+  {% elif user.role != "Job Seeker" %} {% if val %}
+  <h2 class="text-center mb-4" style="color: rgb(5, 11, 40)">Applications</h2>
+  {% else %}
+  <h2 class="text-center mb-4" style="color: rgb(5, 11, 40)">Posted Jobs</h2>
+  {% endif %}
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    {% for job in jobs %}
+    <div class="col">
+      <div class="card h-100 shadow">
+        <div class="card-body">
+          <div class="container col-md-12 d-flex">
+            <div class="col-md-1">
+              <img
+                src="{% static 'images/image-9.png' %}"
+                height="25px"
+                width="25px"
+                alt=""
+              />
+            </div>
+            <div class="col-md-10">
+              <h5 class="card-title fw-bold" style="color: rgb(5, 11, 40)">
+                {{ job.title }}
+              </h5>
+              <h6 class="card-subtitle mb-2 text-muted">
+                {{ job.company_name }}
+              </h6>
+            </div>
+          </div>
+          <p class="card-text">
+            <strong>Location:</strong> {{ job.location }}<br />
+            <strong>Salary:</strong> ₹{{ job.start_salary }} -
+            ₹{{job.end_salary}} <br />
+            <strong>Type:</strong> {{ job.job_type }}
+          </p>
+        </div>
+        <div
+          class="card-footer bg-transparent border-0 text-end d-flex justify-content"
+        >
+          <a
+            href="/account/jobdetails/?val1={{user.id}}&val2={{job.id}}"
+            class="btn btn-sm button-coustom me-2"
+            >View Details</a
+          >
+          {% if val %}
+          <a
+            href="/account/applicants/?val1={{user.id}}&val2={{job.id}}"
+            class="btn btn-sm button-coustom"
+            >View Applications</a
+          >
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <div class="text-center text-muted">
+      <p>No job postings available right now. Check back later!</p>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+
+{% endblock %}

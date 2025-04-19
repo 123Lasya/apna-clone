@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container my-5">
+  <h2 class="text-center mb-4" style="color: #2c1e1e">Support</h2>
+  <p class="text-center text-muted mb-5">
+    Need help? Our team is here to support you every step of the way.
+  </p>
+
+  <div class="row g-4">
+    {% if val %}
+    <div class="col-md-6">
+      <div class="card shadow-sm border-0 p-3" style="background: #ffe1d1b5">
+        <h5>Email Us</h5>
+        <p>
+          Reach us at <strong>support@apnajobs.com</strong> for any queries or
+          issues.
+        </p>
+      </div>
+    </div>
+    {% else %}
+    <div class="col-md-6">
+      <div class="card shadow-sm border-0 p-3" style="background: #ffe1d1ad">
+        <h5>Help Center</h5>
+        <p>
+          Browse our help center for FAQs and quick guides to using our platform
+          effectively.
+        </p>
+        <a href="#" class="btn btn-outline-none btn-sm button-coustom col-md-3"
+          >Visit Help Center</a
+        >
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
