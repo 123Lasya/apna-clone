@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-%&)xbw95odj2rg3q_uq_=ot1e8(iu^n_$e5v9$q=4^62zzvcax
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['your-project-name.railway.app', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -73,16 +73,10 @@ WSGI_APPLICATION = 'apna.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+import dj_database_url
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'apnadatabase',
-        'USER': 'root',
-        'PASSWORD':'1234Lasya..',
-        'HOST':'localhost',
-        'PORT':'3306',
-    }
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 }
 
 
