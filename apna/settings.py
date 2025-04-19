@@ -76,8 +76,16 @@ WSGI_APPLICATION = 'apna.wsgi.application'
 import dj_database_url
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',  # <- This is the correct ENGINE
+        'NAME': 'apnadatabase',
+        'USER': 'root',
+        'PASSWORD': '1234Lasya..',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
 }
+
 
 
 # Password validation
